@@ -7,20 +7,38 @@
 		<title></title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
+		/>
 		<link rel="stylesheet" href="index.css" />
 	</head>
 	<body class="bg_dark">
-		<div class="switch_container bg_light">
-			<span class="text middle col_dark">Dark</span>
-			<label class="switch">
-				<input type="checkbox" id="toggle" onclick="myFunction()" />
-				<span class="slider round"></span>
-			</label>
-			<span class="text middle col_dark">Light</span>
+		<div class="flex_container bg_light navbar_container">
+			<i class="fa-solid fa-star fa-4x logo"></i>
+			<nav class="navbar grid_container">
+				<span class="col_dark text_16_pt">About</span>
+				<span class="col_dark text_16_pt">Pricing</span>
+				<span class="col_dark text_16_pt">Support</span>
+			</nav>
+			<div class="switch_container grid_container">
+				<span class="text_16_pt middle col_dark">Dark</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle" onclick="myFunction()" />
+					<span class="slider round"></span>
+				</label>
+				<span class="text_16_pt middle col_dark">Light</span>
+			</div>
 		</div>
-		<div class="text col_light">abcd</div>
-		<div class="text col_light">efgh</div>
-		<div class="text col_light">ijkl</div>
+		<div class="grid_container main_content">
+			<div class="col_light title_container">
+				<p class="text_48_pt">Easy Password Generator</p>
+				<p class="title_content text_28_pt">
+					Instantly generate secure password, one click away! Can be used for
+					personal or working use, and guaranteed safety within.
+				</p>
+			</div>
+		</div>
 		<script src="index.js" async defer></script>
 	</body>
 </html>
