@@ -9,11 +9,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="index.css" />
 	</head>
-	<body>
-		<label class="switch">
-			<input type="checkbox" id="toggle" onclick="myFunction()" />
-			<span class="slider round"></span>
-		</label>
+	<body class="bg_dark">
+		<div class="switch_container bg_light">
+			<span class="text middle col_dark">Dark</span>
+			<label class="switch">
+				<input type="checkbox" id="toggle" onclick="myFunction()" />
+				<span class="slider round"></span>
+			</label>
+			<span class="text middle col_dark">Light</span>
+		</div>
+		<div class="text col_light">abcd</div>
+		<div class="text col_light">efgh</div>
+		<div class="text col_light">ijkl</div>
 		<script src="index.js" async defer></script>
 	</body>
 </html>
