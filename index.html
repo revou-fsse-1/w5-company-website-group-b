@@ -6,6 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title></title>
 		<meta name="description" content="" />
+		<meta name="referrer" content="strict-origin" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link
 			rel="stylesheet"
@@ -17,28 +18,125 @@
 		<div class="flex_container bg_light navbar_container">
 			<i class="fa-solid fa-star fa-4x logo"></i>
 			<nav class="navbar grid_container">
-				<span class="col_dark text_16_pt">About</span>
-				<span class="col_dark text_16_pt">Pricing</span>
-				<span class="col_dark text_16_pt">Support</span>
+				<span class="col_dark text_1125_em">About</span>
+				<span class="col_dark text_1125_em">Password Generator</span>
+				<span class="col_dark text_1125_em">Pricing</span>
+				<span class="col_dark text_1125_em">Partners</span>
+				<span class="col_dark text_1125_em">Blog</span>
+				<span class="col_dark text_1125_em">Forum</span>
 			</nav>
 			<div class="switch_container grid_container">
-				<span class="text_16_pt middle col_dark">Dark</span>
+				<span class="text_1125_em middle col_dark">Dark</span>
 				<label class="switch">
 					<input type="checkbox" id="toggle" onclick="myFunction()" />
 					<span class="slider round"></span>
 				</label>
-				<span class="text_16_pt middle col_dark">Light</span>
+				<span class="text_1125_em middle col_dark">Light</span>
 			</div>
 		</div>
 		<div class="grid_container main_content">
 			<div class="col_light title_container">
-				<p class="text_48_pt">Easy Password Generator</p>
-				<p class="title_content text_28_pt">
-					Instantly generate secure password, one click away! Can be used for
-					personal or working use, and guaranteed safety within.
-				</p>
+				<p class="text_3_em">Generate Password, Few Clicks Away with GGEasy!</p>
 			</div>
-		</div>
+			<div class = "col_light result_container flex_container">
+				<input type = "text" class = "result text_2_em bg_dark col_light" id = "result_text" value = "" disabled/>
+				<div class = "text_3_em icon">
+					<i class="fa-solid fa-copy copy_btn" onclick = "copyPassword()"></i>
+					<i class="fa-sharp fa-solid fa-arrows-rotate refresh_btn" onclick = "refreshFunction()"></i>
+				</div>				
+			</div>
+			<div class = "strength flex_container text_15_em">
+				<span class = "col_light">STRENGTH: </span>
+				<span class = "col_light strength_text">VERY STRONG</span>
+				<span class = "strength_icon"></span>
+			</div>
+			<div class = "grid_container range_container text_15_em col_light">
+				<p id = "length_text">Character Length</p>
+						<p id = "length_val" class = "col_light"></p>
+						<input type = "range" class = "progress" min="4" max = "40" step ="1" value = "8" id = "inputrange" oninput = "rangeValAndPassLength()">
+			</div>
+			<div class = "char_length grid_container col_light text_15_em">
+				<span id = "length_text">Character Length</span>
+				<span id = "length_val"></span>
+			</div>
+			<div class = "col_light input_container grid_container">
+				<input
+							type="checkbox"
+							value="uppercase"
+							id="include_uppercase"
+							class="uppercase checkbox_value"
+							oninput = "rangeValAndPassLength()"
+						/>
+						<label for="include_uppercase" class = "text_15_em">Uppercase Letters (ABC)</label>
+						<input
+							type="checkbox"
+							value="lowercase"
+							id="include_lowercase"
+							class="lowercase checkbox_value"
+							oninput = "rangeValAndPassLength()"
+							checked
+						/>
+						<label for="include_lowercase" class = "text_15_em">Lowercase Letters (abc)</label>
+						<input
+							type="checkbox"
+							value="number"
+							id="include_number"
+							class="number checkbox_value"
+							oninput = "rangeValAndPassLength()"
+						/>
+						<label for="include_number" class = "text_15_em">Numbers (123)</label>
+						<input
+							type="checkbox"
+							value="symbol"
+							id="include_symbol"
+							class="symbol checkbox_value"
+							oninput = "rangeValAndPassLength()"
+						/>
+						<label for="include_symbol" class = "text_15_em">Symbols (!@#)</label>
+			</div>
+			<!-- <div class = "generator_container ">
+				<div class = "generator_content grid_container text_16_pt">
+					<p class = "col_light">Generated Password:</p>
+					<p class = " col_light result">RESULT</p>
+					<button class = " col_light generate_btn bg_dark" onclick = "generatePassword()">Generate</button>
+					<div class = " col_light input_container grid_container">
+						<p id = "length_text">Character Length</p>
+						<p id = "length_val" class = "col_light"></p>
+						<input type = "range" class = "progress" min="4" max = "40" step ="1" value = "8" id = "inputrange" oninput = "rangeValAndPassLength()">
+						<div class = "checkbox_container grid_container">
+						<input
+							type="checkbox"
+							value="uppercase"
+							id="include_uppercase"
+							class="uppercase"
+						/>
+						<label for="include_uppercase">Include Uppercase Letters</label>
+						<input
+							type="checkbox"
+							value="lowercase"
+							id="include_lowercase"
+							class="lowercase"
+							checked
+						/>
+						<label for="include_lowercase">Include Lowercase Letters</label>
+						<input
+							type="checkbox"
+							value="number"
+							id="include_number"
+							class="number"
+						/>
+						<label for="include_number">Include Numbers</label>
+						<input
+							type="checkbox"
+							value="symbol"
+							id="include_symbol"
+							class="symbol"
+						/>
+						<label for="include_symbol">Include Symbols</label>
+						</div>
+					
+				</div> 
+			</div>-->
 		<script src="index.js" async defer></script>
 	</body>
 </html>
