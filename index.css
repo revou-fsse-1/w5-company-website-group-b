@@ -311,3 +311,9 @@ input[type="text"] {
 .col_dark_placeholder::-webkit-input-placeholder {
 	color: #00031a;
 }
+
+.strength_icon {
+	width: 1.5em;
+	height: 1.5em;
+	display: none;
+}

@@ -4,6 +4,7 @@ function myFunction() {
 	var bg_dark = document.getElementsByClassName("bg_dark");
 	var bg_light = document.getElementsByClassName("bg_light");
 	var checkbox_color = document.getElementsByClassName("checkbox_value");
+	var strengthicon = document.getElementsByClassName("strength_icon");
 
 	if (document.getElementById("toggle").checked) {
 		for (let i = 0; i < dark.length; i++) {
@@ -21,8 +22,12 @@ function myFunction() {
 		for (let i = 0; i < checkbox_color.length; i++) {
 			checkbox_color[i].style.outline = "1px solid #00031a";
 		}
+		for (let i = 0; i < strengthicon.length; i++) {
+			strengthicon[i].style.fill = "#00031a";
+		}
 	}
 	if (document.getElementById("toggle").checked == false) {
+		strengthicon[0].style.fill = "#e4e5f1";
 		for (let i = 0; i < dark.length; i++) {
 			dark[i].style.color = "#00031a";
 		}
@@ -38,6 +43,9 @@ function myFunction() {
 		for (let i = 0; i < checkbox_color.length; i++) {
 			checkbox_color[i].style.outline = "1px solid #e4e5f1";
 		}
+		for (let i = 0; i < strengthicon.length; i++) {
+			strengthicon[i].style.fill = "#e4e5f1";
+		}
 	}
 }
 
@@ -49,15 +57,9 @@ function rangeValue() {
 
 function passwordLength() {
 	const length = document.getElementById("inputrange").value;
-	document.getElementById("length_val").innerHTML = length;
+	document.getElementById("length_val").style.s;
 
 	return length;
-}
-
-function rangeValAndPassLength() {
-	rangeValue();
-	passwordLength();
-	generatePassword();
 }
 
 function generatePassword() {
@@ -176,7 +178,10 @@ function generatePassword() {
 }
 
 function refreshFunction() {
-	rangeValAndPassLength();
+	rangeValue();
+	passwordLength();
+	generatePassword();
+	checkStrength();
 }
 function copyPassword() {
 	const passwordText = document.getElementById("result_text");
@@ -185,4 +190,65 @@ function copyPassword() {
 	navigator.clipboard.writeText(passwordText.value);
 	alert("Password Copied!");
 }
-(window.onload = myFunction()), rangeValAndPassLength();
+
+function checkStrength() {
+	var password_value = document.getElementById("result_text").value;
+	var strengthtext = document.getElementById("strengthText");
+	var smile_face = document.getElementById("smile_face");
+	var straight_face = document.getElementById("straight_face");
+	var sad_face = document.getElementById("sad_face");
+	var strength = 0;
+	if (password_value.match(/[a-z]+/)) {
+		strength += 1;
+	}
+	if (password_value.match(/[A-Z]+/)) {
+		strength += 1;
+	}
+	if (password_value.match(/[0-9]+/)) {
+		strength += 1;
+	}
+	if (password_value.match(/[$@#&!]+/)) {
+		strength += 1;
+	}
+
+	switch (strength) {
+		case 0:
+			strengthbar = 0;
+			break;
+		case 1:
+			strengthbar = 25;
+			break;
+
+		case 2:
+			strengthbar = 50;
+			break;
+
+		case 3:
+			strengthbar = 75;
+			break;
+
+		case 4:
+			strengthbar = 100;
+			break;
+	}
+	if (passwordLength() < 7 && strengthbar < 50) {
+		strengthtext.innerHTML = "Weak Password";
+		sad_face.style.display = "block";
+		straight_face.style.display = "none";
+		smile_face.style.display = "none";
+	}
+	if (passwordLength() >= 7 && passwordLength() <= 8 && strengthbar < 75) {
+		strengthtext.innerHTML = "Fairly Strong Password";
+		sad_face.style.display = "none";
+		straight_face.style.display = "block";
+		smile_face.style.display = "none";
+	}
+	if (passwordLength() >= 9) {
+		strengthtext.innerHTML = "Strong Password";
+		sad_face.style.display = "none";
+		straight_face.style.display = "none";
+		smile_face.style.display = "block";
+	}
+}
+
+(window.onload = myFunction()), refreshFunction();
