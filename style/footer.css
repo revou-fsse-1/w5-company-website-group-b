@@ -1,0 +1,39 @@
+footer {
+	margin-top: 4em;
+	bottom: 0;
+}
+.footer-1 {
+	row-gap: 1.5em;
+	height: max-content;
+}
+.footer-2 {
+	gap: 1em;
+	height: max-content;
+}
+.footer-content {
+	padding: 2.5em;
+	flex-direction: row;
+	width: auto;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 5em;
+}
+.terms-text {
+	width: max-content;
+}
+
+.copyright {
+	grid-column: 1/2 span;
+}
+
+.footer-2 p {
+	padding-bottom: 20px;
+}
+
+.footer-2 a {
+	width: max-content;
+}
+
+.connect-logo {
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 1.5em;
+}

@@ -1,0 +1,26 @@
+header {
+	position: fixed;
+	top: 0;
+	z-index: 2;
+}
+
+header .logo {
+	padding-left: 30px;
+}
+
+.navbar-container {
+	height: 90px;
+}
+
+.navbar {
+	grid-template-columns: repeat(6, max-content);
+	gap: 22px;
+	vertical-align: middle;
+	align-items: center;
+	margin-left: 6.25em;
+}
+
+.middle {
+	padding: 1%;
+	vertical-align: middle;
+}

@@ -1,10 +1,11 @@
 function myFunction() {
-	var dark = document.getElementsByClassName("col_dark");
-	var light = document.getElementsByClassName("col_light");
-	var bg_dark = document.getElementsByClassName("bg_dark");
-	var bg_light = document.getElementsByClassName("bg_light");
-	var checkbox_color = document.getElementsByClassName("checkbox_value");
-	var strengthicon = document.getElementsByClassName("strength_icon");
+	var dark = document.getElementsByClassName("col-dark");
+	var light = document.getElementsByClassName("col-light");
+	var bg_dark = document.getElementsByClassName("bg-dark");
+	var bg_light = document.getElementsByClassName("bg-light");
+	var checkbox_color = document.getElementsByClassName("checkbox-value");
+	var strengthicon = document.getElementsByClassName("strength-icon");
+	var svg_light_col = document.getElementsByClassName("svg-light-col");
 
 	if (document.getElementById("toggle").checked) {
 		for (let i = 0; i < dark.length; i++) {
@@ -24,6 +25,9 @@ function myFunction() {
 		}
 		for (let i = 0; i < strengthicon.length; i++) {
 			strengthicon[i].style.fill = "#00031a";
+		}
+		for (let i = 0; i < svg_light_col.length; i++) {
+			svg_light_col[i].style.fill = "#00031a";
 		}
 	}
 	if (document.getElementById("toggle").checked == false) {
@@ -46,6 +50,9 @@ function myFunction() {
 		for (let i = 0; i < strengthicon.length; i++) {
 			strengthicon[i].style.fill = "#e4e5f1";
 		}
+		for (let i = 0; i < svg_light_col.length; i++) {
+			svg_light_col[i].style.fill = "#e4e5f1";
+		}
 	}
 }
 
@@ -57,7 +64,7 @@ function rangeValue() {
 
 function passwordLength() {
 	const length = document.getElementById("inputrange").value;
-	document.getElementById("length_val").style.s;
+	document.getElementById("length-val").innerHTML = length;
 
 	return length;
 }
@@ -134,7 +141,7 @@ function generatePassword() {
 		"(",
 		")",
 		"-",
-		"_",
+		"-",
 		"+",
 		"=",
 		"[",
@@ -154,10 +161,10 @@ function generatePassword() {
 		"|",
 	];
 	list = [];
-	const uppercase = document.getElementById("include_uppercase").checked;
-	const lowercase = document.getElementById("include_lowercase").checked;
-	const number = document.getElementById("include_number").checked;
-	const symbol = document.getElementById("include_symbol").checked;
+	const uppercase = document.getElementById("include-uppercase").checked;
+	const lowercase = document.getElementById("include-lowercase").checked;
+	const number = document.getElementById("include-number").checked;
+	const symbol = document.getElementById("include-symbol").checked;
 	password = "";
 	if (uppercase == true) {
 		list = list.concat(uppercase_array);
@@ -184,7 +191,7 @@ function refreshFunction() {
 	checkStrength();
 }
 function copyPassword() {
-	const passwordText = document.getElementById("result_text");
+	const passwordText = document.getElementById("result-text");
 	passwordText.select();
 	passwordText.setSelectionRange(0, 99999);
 	navigator.clipboard.writeText(passwordText.value);
@@ -192,11 +199,11 @@ function copyPassword() {
 }
 
 function checkStrength() {
-	var password_value = document.getElementById("result_text").value;
+	var password_value = document.getElementById("result-text").value;
 	var strengthtext = document.getElementById("strengthText");
-	var smile_face = document.getElementById("smile_face");
-	var straight_face = document.getElementById("straight_face");
-	var sad_face = document.getElementById("sad_face");
+	var smile_face = document.getElementById("smile-face");
+	var straight_face = document.getElementById("straight-face");
+	var sad_face = document.getElementById("sad-face");
 	var strength = 0;
 	if (password_value.match(/[a-z]+/)) {
 		strength += 1;
