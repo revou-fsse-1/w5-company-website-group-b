@@ -1,279 +1,204 @@
 <!DOCTYPE html>
-
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title></title>
-		<meta name="description" content="" />
-		<meta name="referrer" content="strict-origin" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
-		/>
-		<link rel="stylesheet" href="index.css" />
-	</head>
-	<body class="bg_dark">
-		<div class="flex_container bg_light navbar_container">
-			<i class="fa-solid fa-star fa-4x logo"></i>
-			<nav class="navbar grid_container">
-				<span class="col_dark text_1125_em">About</span>
-				<span class="col_dark text_1125_em">Password Generator</span>
-				<span class="col_dark text_1125_em">Pricing</span>
-				<span class="col_dark text_1125_em">Partners</span>
-				<span class="col_dark text_1125_em">Blog</span>
-				<span class="col_dark text_1125_em">Forum</span>
-			</nav>
-			<div class="switch_container grid_container">
-				<span class="text_1125_em middle col_dark">Dark</span>
-				<label class="switch">
-					<input type="checkbox" id="toggle" onclick="myFunction()" />
-					<span class="slider round"></span>
-				</label>
-				<span class="text_1125_em middle col_dark">Light</span>
-			</div>
-		</div>
-		<section class="grid_container main_content">
-			<div class="col_light title_container">
-				<p class="text_3_em">Generate Password, Few Clicks Away with GGEasy!</p>
-			</div>
-			<div class="col_light result_container flex_container">
-				<input
-					type="text"
-					class="result text_2_em bg_dark col_light"
-					id="result_text"
-					value=""
-					disabled
-					onkeyup="checkStrength()"
-				/>
-				<div class="text_3_em icon">
-					<i class="fa-solid fa-copy copy_btn" onclick="copyPassword()"></i>
-					<i
-						class="fa-sharp fa-solid fa-arrows-rotate refresh_btn"
-						onclick="refreshFunction()"
-					></i>
-				</div>
-			</div>
-			<div class="strength flex_container text_15_em">
-				<span class="col_light">STRENGTH: </span>
-				<span class="col_light strength_text" id="strengthText"></span>
-				<svg
-					class="strength_icon"
-					id="smile_face"
-					xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink"
-					fill="#000000"
-					height="800px"
-					width="800px"
-					version="1.1"
-					id="Layer_1"
-					viewBox="0 0 330 330"
-					xml:space="preserve"
-				>
-					<g id="XMLID_26_">
-						<path
-							id="XMLID_27_"
-							d="M165,0C74.019,0,0,74.019,0,165s74.019,165,165,165s165-74.019,165-165S255.981,0,165,0z M165,300   c-74.44,0-135-60.561-135-135S90.56,30,165,30s135,60.561,135,135S239.439,300,165,300z"
-						/>
-						<path
-							id="XMLID_30_"
-							d="M215.911,200.912H114.088c-6.067,0-11.537,3.654-13.858,9.26c-2.321,5.605-1.038,12.057,3.252,16.347   C119.914,242.95,141.762,252,165,252c23.238,0,45.086-9.05,61.518-25.481c4.29-4.29,5.573-10.741,3.252-16.347   C227.448,204.566,221.978,200.912,215.911,200.912z"
-						/>
-						<path
-							id="XMLID_31_"
-							d="M115.14,147.14c3.72-3.72,5.86-8.88,5.86-14.14c0-5.26-2.14-10.42-5.86-14.141   C111.42,115.14,106.26,113,101,113c-5.27,0-10.42,2.14-14.14,5.859C83.13,122.58,81,127.74,81,133c0,5.26,2.13,10.42,5.86,14.14   c3.72,3.72,8.88,5.86,14.14,5.86C106.26,153,111.42,150.859,115.14,147.14z"
-						/>
-						<path
-							id="XMLID_71_"
-							d="M229,113c-5.26,0-10.42,2.14-14.14,5.859c-3.72,3.721-5.86,8.87-5.86,14.141c0,5.26,2.14,10.42,5.86,14.14   c3.72,3.72,8.88,5.86,14.14,5.86c5.26,0,10.42-2.141,14.14-5.86c3.73-3.72,5.86-8.88,5.86-14.14c0-5.26-2.13-10.42-5.86-14.141   C239.42,115.14,234.27,113,229,113z"
-						/>
-					</g>
-				</svg>
-				<svg
-					class="strength_icon"
-					id="sad_face"
-					xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink"
-					fill="#000000"
-					height="800px"
-					width="800px"
-					version="1.1"
-					id="Layer_1"
-					viewBox="0 0 330 330"
-					xml:space="preserve"
-				>
-					<g id="XMLID_85_">
-						<path
-							id="XMLID_86_"
-							d="M165,0C74.019,0,0,74.019,0,165s74.019,165,165,165c90.981,0,165-74.019,165-165S255.982,0,165,0z M165,300   C90.561,300,30,239.44,30,165S90.561,30,165,30c74.439,0,135,60.561,135,135S239.439,300,165,300z"
-						/>
-						<path
-							id="XMLID_89_"
-							d="M164.999,179.823C164.998,179.823,165,179.823,164.999,179.823c-23.238,0-45.087,9.05-61.518,25.482   c-5.858,5.857-5.858,15.355,0,21.213c2.929,2.929,6.768,4.394,10.607,4.394s7.678-1.465,10.606-4.394   c10.766-10.766,25.08-16.694,40.305-16.694c15.225,0,29.539,5.929,40.305,16.694c5.857,5.857,15.355,5.857,21.213,0   c5.858-5.857,5.858-15.355,0-21.213C210.085,188.873,188.238,179.823,164.999,179.823z"
-						/>
-						<path
-							id="XMLID_90_"
-							d="M115.14,147.14c3.73-3.72,5.86-8.88,5.86-14.14s-2.13-10.42-5.86-14.141C111.42,115.14,106.26,113,101,113   c-5.27,0-10.42,2.14-14.14,5.859C83.14,122.58,81,127.74,81,133s2.14,10.42,5.86,14.14c3.72,3.72,8.88,5.86,14.14,5.86   C106.26,153,111.42,150.86,115.14,147.14z"
-						/>
-						<path
-							id="XMLID_91_"
-							d="M229,113c-5.27,0-10.42,2.14-14.14,5.859C211.13,122.58,209,127.74,209,133s2.13,10.42,5.86,14.14   c3.72,3.72,8.88,5.86,14.14,5.86c5.26,0,10.42-2.141,14.14-5.86c3.73-3.72,5.86-8.88,5.86-14.14s-2.13-10.42-5.86-14.141   C239.42,115.14,234.26,113,229,113z"
-						/>
-					</g>
-				</svg>
-				<svg
-					class="strength_icon"
-					id="straight_face"
-					xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink"
-					fill="#000000"
-					height="800px"
-					width="800px"
-					version="1.1"
-					id="Layer_1"
-					viewBox="0 0 330 330"
-					xml:space="preserve"
-				>
-					<g id="XMLID_2_">
-						<path
-							id="XMLID_4_"
-							d="M165,0C74.019,0,0,74.019,0,165s74.019,165,165,165s165-74.019,165-165S255.981,0,165,0z M165,300   c-74.439,0-135-60.561-135-135S90.561,30,165,30s135,60.561,135,135S239.439,300,165,300z"
-						/>
-						<path
-							id="XMLID_7_"
-							d="M215.912,200.912H114.088c-8.284,0-15,6.716-15,15c0,8.284,6.716,15,15,15h101.824c8.284,0,15-6.716,15-15   C230.912,207.628,224.196,200.912,215.912,200.912z"
-						/>
-						<path
-							id="XMLID_8_"
-							d="M115.14,147.14c3.73-3.72,5.86-8.88,5.86-14.14c0-5.26-2.13-10.42-5.86-14.141   C111.42,115.14,106.26,113,101,113c-5.271,0-10.42,2.14-14.141,5.859C83.13,122.58,81,127.729,81,133   c0,5.26,2.13,10.42,5.859,14.14C90.58,150.859,95.74,153,101,153S111.42,150.859,115.14,147.14z"
-						/>
-						<path
-							id="XMLID_9_"
-							d="M229,113c-5.27,0-10.42,2.14-14.141,5.859C211.14,122.58,209,127.729,209,133c0,5.27,2.14,10.42,5.859,14.14   c3.721,3.72,8.881,5.86,14.141,5.86s10.42-2.141,14.14-5.86c3.72-3.72,5.86-8.88,5.86-14.14c0-5.26-2.141-10.42-5.86-14.141   C239.42,115.14,234.27,113,229,113z"
-						/>
-					</g>
-				</svg>
-			</div>
-			<div class="grid_container range_container text_15_em col_light">
-				<p id="length_text">Character Length</p>
-				<p id="length_val" class="col_light"></p>
-				<input
-					type="range"
-					class="progress"
-					min="4"
-					max="40"
-					step="1"
-					value="8"
-					id="inputrange"
-					oninput="refreshFunction()"
-				/>
-			</div>
-			<div class="char_length grid_container col_light text_15_em">
-				<span id="length_text">Character Length</span>
-				<span id="length_val"></span>
-			</div>
-			<div class="col_light input_container grid_container">
-				<input
-					type="checkbox"
-					value="uppercase"
-					id="include_uppercase"
-					class="uppercase checkbox_value"
-					oninput="refreshFunction()"
-				/>
-				<label for="include_uppercase" class="text_15_em"
-					>Uppercase Letters (ABC)</label
-				>
-				<input
-					type="checkbox"
-					value="lowercase"
-					id="include_lowercase"
-					class="lowercase checkbox_value"
-					oninput="refreshFunction()"
-					checked
-				/>
-				<label for="include_lowercase" class="text_15_em"
-					>Lowercase Letters (abc)</label
-				>
-				<input
-					type="checkbox"
-					value="number"
-					id="include_number"
-					class="number checkbox_value"
-					oninput="refreshFunction()"
-				/>
-				<label for="include_number" class="text_15_em">Numbers (123)</label>
-				<input
-					type="checkbox"
-					value="symbol"
-					id="include_symbol"
-					class="symbol checkbox_value"
-					oninput="refreshFunction()"
-				/>
-				<label for="include_symbol" class="text_15_em">Symbols (!@#)</label>
-			</div>
-			<div class="education_container col_light grid_container">
-				<span class="education_title text_25_em">
-					What Makes a Password Strong?
-				</span>
-				<div class="unique_container flex_container">
-					<i class="fa-solid fa-fingerprint col_light"></i>
-					<span class="text_2_em">Unique</span>
-					<span class="text_15_em"
-						>To reduce vulnerability, each account should be assigned unique
-						password to ensure safety in case of breach.
-					</span>
-				</div>
-				<div class="complex_container flex_container">
-					<i class="fa-solid fa-shield-halved col_light"></i>
-					<span class="text_2_em">Complex</span>
-					<span class="text_15_em"
-						>What makes a strong password are combinations of letters, numbers,
-						and symbols, which arranged randomly and then combined into string
-						of characters that is unique and does not resemble anything, thus
-						making it complex.
-					</span>
-				</div>
-				<div class="long_container flex_container">
-					<svg
-						width="5em"
-						height="5em"
-						viewBox="0 0 103 100"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M72.9629 29.1667H94.1832V70.8334H72.9629V79.1667C72.9629 80.2718 73.41 81.3316 74.2059 82.113C75.0018 82.8944 76.0813 83.3334 77.2069 83.3334H85.6951V91.6667H75.0849C72.7506 91.6667 68.7188 89.7917 68.7188 87.5C68.7188 89.7917 64.6869 91.6667 62.3527 91.6667H51.7425V83.3334H60.2306C61.3562 83.3334 62.4357 82.8944 63.2316 82.113C64.0276 81.3316 64.4747 80.2718 64.4747 79.1667V20.8334C64.4747 19.7283 64.0276 18.6685 63.2316 17.8871C62.4357 17.1057 61.3562 16.6667 60.2306 16.6667H51.7425V8.33337H62.3527C64.6869 8.33337 68.7188 10.2084 68.7188 12.5C68.7188 10.2084 72.7506 8.33337 75.0849 8.33337H85.6951V16.6667H77.2069C76.0813 16.6667 75.0018 17.1057 74.2059 17.8871C73.41 18.6685 72.9629 19.7283 72.9629 20.8334V29.1667ZM9.30176 29.1667H55.9866V37.5H17.7899V62.5H55.9866V70.8334H9.30176V29.1667ZM85.6951 62.5V37.5H72.9629V62.5H85.6951ZM36.8882 50C36.8882 48.3424 36.2175 46.7527 35.0236 45.5806C33.8298 44.4085 32.2105 43.75 30.5221 43.75C28.8337 43.75 27.2145 44.4085 26.0206 45.5806C24.8267 46.7527 24.156 48.3424 24.156 50C24.156 51.6576 24.8267 53.2474 26.0206 54.4195C27.2145 55.5916 28.8337 56.25 30.5221 56.25C32.2105 56.25 33.8298 55.5916 35.0236 54.4195C36.2175 53.2474 36.8882 51.6576 36.8882 50ZM55.9866 45.375C53.3977 43.0417 49.3658 43.25 46.9891 45.8334C44.6124 48.3334 44.8246 52.2917 47.4984 54.625C49.8327 56.7917 53.5674 56.7917 55.9866 54.625V45.375Z"
-							fill="#E4E5F1"
-						/>
-					</svg>
-
-					<span class="text_2_em">Long</span>
-					<span class="text_15_em"
-						>Longer password is better and safer. Good password at least has 10
-						characters, but better one should be much longer than just that.
-					</span>
-				</div>
-			</div>
-			<div class="col_light text_25_em random_text">
-				Our password generator is part of our password manager. Get yours now.
-				For free.
-			</div>
-			<div class="download_container col_light flex_container">
-				<span class="text_25_em random_text">Download</span>
-				<div class="download_logo flex_container">
-					<i class="fa-brands fa-windows"></i>
-					<i class="fa-brands fa-apple"></i>
-					<i class="fa-brands fa-linux"></i>
-					<i class="fa-brands fa-android"></i>
-				</div>
-			</div>
-		</section>
-		<footer class="flex_container bg_light">
-			<div class="footer_content">
-				<i class="fa-solid fa-user-shield"></i>
-			</div>
-		</footer>
-		<script src="index.js" async defer></script>
-	</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ggEasy Landing Page</title>
+    <meta name="description" content="" />
+    <meta name="referrer" content="strict-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="bg_dark">
+    <div class="flex_container bg_light navbar_container">
+      <i class="fa-solid fa-star fa-4x logo"></i>
+      <nav class="navbar grid_container">
+        <span class="col_dark text_1125_em">About</span>
+        <span class="col_dark text_1125_em">Password Generator</span>
+        <span class="col_dark text_1125_em">Pricing</span>
+        <span class="col_dark text_1125_em">Partners</span>
+        <span class="col_dark text_1125_em">Blog</span>
+        <span class="col_dark text_1125_em">Forum</span>
+      </nav>
+      <div class="switch_container grid_container">
+        <span class="text_1125_em middle col_dark">Dark</span>
+        <label class="switch">
+          <input type="checkbox" id="toggle" onclick="myFunction()" />
+          <span class="slider round"></span>
+        </label>
+        <span class="text_1125_em middle col_dark">Light</span>
+      </div>
+    </div>
+    <div class="hero-homepage">
+      <h1 class="hero-title">
+        GGEASY EXCLUSIVE PASSWORD MANAGER. FOR EVERY KIND OF NEEDS.
+      </h1>
+      <h2 class="hero-par">
+        With our zero knowledge patented encryption, your password are
+        guaranteed safe because anyone; not even us; can see it.
+      </h2>
+      <h2 class="hero-par">
+        Our payment plan also makes you able to purchase our service
+        hassle-free, where we accept any kind of payment service without credit
+        card.
+      </h2>
+    </div>
+    <div class="hero-img">
+      <img
+        src="./assets/landing-page/hero-landing-img.png"
+        alt="hero landing page img"
+      />
+    </div>
+    <div class="feature-landing">
+      <p class="feature-title">Why Us?</p>
+      <div class="feature-content">
+        <span class="feature-list">2B+ Password Generated</span>
+        <span class="feature-list">20 Awards Earned</span>
+        <span class="feature-list">High Security Encryption</span>
+      </div>
+    </div>
+    <div class="intro-container">
+      <div class="intro-txt1">
+        <p class="intro-title">What is a password generator?</p>
+        <p class="intro-content">
+          With the help of a password generator, you can automatically generate
+          secure passwords for each of your accounts depending on rules that you
+          specify.
+        </p>
+      </div>
+      <div class="intro-txt2">
+        <p class="intro-title">What makes a good password?</p>
+        <ul class="intro-content-list">
+          <li class="intro-content">
+            Develop strong passwords using safe technology with built-in
+            randomness.
+          </li>
+          <li class="intro-content">
+            Adapt recommendations to match the specific passwords needs of
+            various websites.
+          </li>
+          <li class="intro-content">
+            Integrate strong passwords into a password manager like ggEasy to
+            create, maintain, and conveniently utilize all of your strong
+            passwords.
+          </li>
+        </ul>
+      </div>
+      <div class="intro-btn">
+        <a class="intro-btn-link" href="./password-generator/index.html"
+          >Try our password generator</a
+        >
+      </div>
+      <div class="intro-img">
+        <img
+          src="./assets/landing-page/intro-landing-img.png"
+          alt="intro landing page img"
+        />
+      </div>
+    </div>
+    <div class="benefit-1">
+      <div class="benefit-content">
+        <p class="benefit-title">
+          Why it is important to create strong password?
+        </p>
+        <p class="benefit-txt">
+          Having strong password makes it more difficult for criminals to
+          acquire your personal information. Using one password for each account
+          you have means hackers cannot access every account you have.
+          <br />
+          Many online accounts contain vital personal informations, such as
+          phone number, credit card number, etc. Risking only using one password
+          for all of them means losing everything once the password is changed
+          by hackers.
+        </p>
+      </div>
+      <div class="benefit-img-1">
+        <img
+          class="benefit-content-img-1"
+          src="./assets/landing-page/benefit-img-1.svg"
+          alt="benefit img-1"
+        />
+      </div>
+    </div>
+    <div class="benefit-2">
+      <div class="benefit-content">
+        <p class="benefit-title">Does password managers safe to use?</p>
+        <p class="benefit-txt">
+          Yes. While we are not speaking on behalf of every application out
+          there, generally password managers from trustworthy developers are
+          safe.
+          <br />
+          Password manager is useful to store secure passwords created with its
+          generator, using your device to store it. Your passwords are protected
+          with strong encryption, and it is practically impossible to break open
+          without using password or fingerprint.
+        </p>
+      </div>
+      <div class="benefit-img-2">
+        <img
+          class="benefit-content-img-2"
+          src="./assets/landing-page/benefit-img-2.svg"
+          alt="benefit img-2"
+        />
+      </div>
+    </div>
+    <div class="benefit-3">
+      <div class="benefit-content">
+        <p class="benefit title">
+          How does the tool measure password strength?
+        </p>
+        <p class="benefit-txt">
+          The tool automatically calculates password entropy, which indicates
+          how easy it is for a cracking software to guess a password. More
+          passwords tested by software, the better the entropy. It also
+          calculate how difficult it is to crack password with methods commonly
+          used by hackers, such as brute force cracking and dictionary attacks.
+          Based on the mathematical result, the tool defines password strength
+          as weak, medium, or strong.
+          <br />
+          The stronger the password is, the longer it takes for hackers to get
+          the right result even using program that can test millions password in
+          second. Theoretically, it is possible to crack any password. However,
+          strong password could still take millions of years to be cracked.
+        </p>
+      </div>
+      <div class="benefit-img-3">
+        <img
+          class="benefit-content-img-3"
+          src="./assets/landing-page/benefit-img-3.svg"
+          alt="benefit img-3"
+        />
+      </div>
+      <div class="benefit-img-4">
+        <img
+          class="benefit-content-img-4"
+          src="./assets/landing-page/benefit-img-4.svg"
+          alt="benefit img-4"
+        />
+      </div>
+    </div>
+    <div class="col_light text_25_em random_text">
+      Interested with our password manager? No need to worry, you can use it
+      within few steps.
+    </div>
+    <div class="download_container col_light flex_container">
+      <span class="text_25_em random_text">Download</span>
+      <div class="download_logo flex_container">
+        <i class="fa-brands fa-windows"></i>
+        <i class="fa-brands fa-apple"></i>
+        <i class="fa-brands fa-linux"></i>
+        <i class="fa-brands fa-android"></i>
+      </div>
+    </div>
+    <footer class="flex_container bg_light">
+      <div class="footer_content">
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+    </footer>
+    <script src="index.js" async defer></script>
+  </body>
 </html>
