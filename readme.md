@@ -1,8 +1,9 @@
-# Company Website - ggEasy Password Manager
+# ggEasy Password Manager Company Website
 
 ## Link
 
-[Netlify](https://password-generator-group-b.netlify.app)
+[https://ggeasy.netlify.app](https://ggeasy.netlify.app)
+[https://ggeasy.yankyhermawan.xyz](https://ggeasy.yankyhermawan.xyz)
 
 ## Inspiration
 
@@ -18,8 +19,14 @@
 
 ## Design
 
-
-[Figma](https://www.figma.com/file/ruMY3t0i1MtEV82hdw7wTr/Milestone-1-Group-B---ggEasy-Password-Manager?node-id=0%3A1&t=MOfgZs1CaYjG87SK-1)
-=======
 [Figma](https://www.figma.com/file/ruMY3t0i1MtEV82hdw7wTr/Milestone-1-Group-B---ggEasy-Password-Manager?node-id=0%3A1&t=MOfgZs1CaYjG87SK-1)
 
+## Screenshot
+
+Dark Mode
+
+![ggEasy Password Generator - Dark Mode](./assets/ggeasy%20dark%20mode.png)
+
+Light Mode
+
+![ggEasy Password Generator - Light Mode](./assets/ggeasy%20light%20mode.png)
