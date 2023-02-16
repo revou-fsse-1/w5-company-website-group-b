@@ -1,6 +1,7 @@
 footer {
 	margin-top: 4em;
 	bottom: 0;
+	width: max-content;
 }
 .footer-1 {
 	row-gap: 1.5em;
