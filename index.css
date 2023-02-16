@@ -1,7 +1,166 @@
+* {
+  width: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+  transition-duration: 0.4s;
+}
+
+html {
+  font-family: "Fredoka", sans-serif;
+}
+
 .flex-container {
   display: flex;
 }
 
 .grid-container {
   display: grid;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+.hero-homepage {
+  line-height: 1.5;
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  margin: auto;
+  font-size: 20px;
+}
+
+.hero-img {
+  width: 60vw;
+  height: auto;
+}
+
+.feature-landing {
+  margin: auto;
+  width: 100%;
+  height: 100px;
+}
+
+.feature-title {
+  font-size: 30px;
+  font-weight: 500;
+  margin: auto;
+  text-align: center;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.intro-container {
+  width: 75vw;
+  height: auto;
+  margin-top: 116px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.intro-text {
+  margin: auto;
+  width: 50%;
+}
+
+.intro-txt1,
+.intro-txt2 {
+  padding: 20px;
+}
+
+.intro-title {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.intro-content {
+  font-size: 20px;
+}
+
+.intro-btn {
+  width: 30vw;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+.intro-btn-link {
+  width: max-content;
+  text-decoration: none;
+  font-size: 30px;
+  margin: auto;
+}
+
+.intro-content-img {
+  width: 28.6vw;
+  height: auto;
+}
+
+.benefit-container {
+  width: 75vw;
+  margin: auto;
+}
+
+.benefit-1,
+.benefit-2,
+.benefit-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 58px;
+  margin-bottom: 58px;
+}
+
+.benefit-content {
+  margin: auto;
+  width: 50%;
+}
+
+.benefit-title {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.benefit-txt {
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 30px;
+}
+
+.benefit-content-img-1 {
+  width: 31vw;
+  height: auto;
+}
+
+.benefit-content-img-2 {
+  width: 30vw;
+  height: auto;
+}
+
+.benefit-content-img-3 {
+  width: 31vw;
+  height: auto;
 }
