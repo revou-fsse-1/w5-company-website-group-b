@@ -16,7 +16,7 @@ footer {
 	flex-direction: row;
 	width: auto;
 	grid-template-columns: repeat(5, 15vw);
-	gap: 5vw;
+	gap: 2em;
 	font-size: 1em;
 }
 .terms-text {
@@ -37,5 +37,4 @@ footer {
 
 .connect-logo {
 	grid-template-columns: repeat(3, 1fr);
-	row-gap: 1.5em;
 }
