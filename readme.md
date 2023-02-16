@@ -1,5 +1,7 @@
 # ggEasy Password Manager Company Website
 
+![ggEasy Homepage](./assets/ggeasy%20homepage.png)
+
 ## Link
 
 [https://ggeasy.netlify.app](https://ggeasy.netlify.app)
