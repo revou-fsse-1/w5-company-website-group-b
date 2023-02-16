@@ -4,7 +4,7 @@
 	}
 }
 @media screen and (max-width: 1440px) {
-	body {
-		overflow-x: visible;
+	.main-content {
+		width: min-content;
 	}
 }
