@@ -224,3 +224,19 @@ img {
     margin: auto;
   }
 }
+
+@media (max-width: 425px) {
+  .feature-title,
+  .feature-list {
+    font-size: 20px;
+  }
+  .intro-title {
+    font-size: 15px;
+  }
+  .intro-content {
+    font-size: 15px;
+  }
+  .benefit-content {
+    width: 100%;
+  }
+}
