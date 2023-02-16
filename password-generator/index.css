@@ -32,7 +32,7 @@ a {
 .main-content {
 	grid-template-rows: repeat(8, auto);
 	gap: 3em;
-	margin-top: 5.625em;
+	margin-top: 5vw;
 	justify-content: center;
 	width: min-content;
 	margin-left: auto;
