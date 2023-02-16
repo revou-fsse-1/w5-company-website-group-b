@@ -3,7 +3,6 @@ function myFunction() {
 	var light = document.getElementsByClassName("col-light");
 	var bg_dark = document.getElementsByClassName("bg-dark");
 	var bg_light = document.getElementsByClassName("bg-light");
-	var checkbox_color = document.getElementsByClassName("checkbox-value");
 
 	if (document.getElementById("toggle").checked) {
 		for (let i = 0; i < dark.length; i++) {
