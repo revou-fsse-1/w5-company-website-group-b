@@ -3,7 +3,6 @@
   margin: 0;
   top: 0;
   left: 0;
-  transition-duration: 0.4s;
 }
 
 html {
@@ -76,6 +75,7 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 50px;
 }
 
 .intro-text {
@@ -98,7 +98,7 @@ img {
 }
 
 .intro-btn {
-  width: 30vw;
+  width: 90%;
   height: 50px;
   margin: auto;
   display: flex;
@@ -108,10 +108,10 @@ img {
 }
 
 .intro-btn-link {
-  width: max-content;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   margin: auto;
+  text-align: center;
 }
 
 .intro-content-img {
@@ -163,4 +163,80 @@ img {
 .benefit-content-img-3 {
   width: 31vw;
   height: auto;
+}
+
+@media (max-width: 1024px) {
+  .hero-homepage {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .hero-img {
+    width: 100%;
+  }
+  .hero-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-homepage {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .hero-img {
+    width: 100%;
+  }
+  .hero-title {
+    text-align: center;
+  }
+  .intro-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .intro-title {
+    margin: auto;
+    line-height: 1.5;
+  }
+
+  .intro-text {
+    padding: 20px;
+  }
+  .intro-content-img {
+    display: none;
+  }
+  .intro-btn-link {
+    font-size: 14px;
+  }
+  .benefit-1,
+  .benefit-2,
+  .benefit-3 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .benefit-title,
+  .benefit-txt {
+    text-align: center;
+  }
+  .benefit-content-img-1,
+  .benefit-content-img-2,
+  .benefit-content-img-3 {
+    margin: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .feature-title,
+  .feature-list {
+    font-size: 20px;
+  }
+  .intro-title {
+    font-size: 15px;
+  }
+  .intro-content {
+    font-size: 15px;
+  }
+  .benefit-content {
+    width: 100%;
+  }
 }

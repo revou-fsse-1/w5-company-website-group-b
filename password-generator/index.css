@@ -34,7 +34,7 @@ a {
 	gap: 3em;
 	margin-top: 5.625em;
 	justify-content: center;
-	width: max-content;
+	width: min-content;
 	margin-left: auto;
 	margin-right: auto;
 }
