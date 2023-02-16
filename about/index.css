@@ -35,7 +35,7 @@ section {
 .hero-image {
 	right: 0;
 	width: 42vw;
-	height: auto;
+	height: 46vw;
 }
 .vision-container {
 	margin: 4vw 10vw 0 10vw;
@@ -66,7 +66,7 @@ section {
 	align-items: center;
 }
 .vision-text-1 {
-	margin-left: 10px;
+	margin-left: 0.5em;
 	margin-top: auto;
 	margin-bottom: auto;
 	grid-row: 1;
