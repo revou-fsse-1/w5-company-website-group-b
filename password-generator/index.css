@@ -1,0 +1,255 @@
+* {
+	width: 100%;
+	margin: 0;
+	transition-duration: 0.4s;
+}
+
+a {
+	text-decoration: none;
+}
+
+:root {
+	font-size: 16px;
+}
+
+.flex-container {
+	display: flex;
+}
+
+.grid-container {
+	display: grid;
+}
+
+.fa-star::before {
+	vertical-align: middle;
+}
+
+.fa-face-worried::before {
+	content: "\e3a3";
+}
+
+.main-content {
+	grid-template-rows: repeat(8, auto);
+	gap: 3em;
+	margin-top: 5.625em;
+	justify-content: center;
+}
+
+.title-container {
+	text-align: center;
+}
+
+.title-content {
+	margin-top: 50px;
+}
+
+.progress {
+	border: solid 2px #82cfd0;
+	border-radius: 8px;
+	height: 20px;
+	outline: none;
+	transition: background 450ms ease-in;
+	grid-column: 1/3 span;
+	grid-row: 2;
+}
+
+.progress::-webkit-slider-thumb {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	-webkit-appearance: none;
+	cursor: ew-resize;
+	background: #434343;
+}
+
+.generator-content {
+	margin: 20px 50px;
+	width: auto;
+	gap: 20px;
+}
+.result-container {
+	align-items: center;
+	border-bottom: 2px solid currentColor;
+}
+.result,
+.generate-btn {
+	padding: 20px;
+}
+
+.generate-btn {
+	text-align: center;
+}
+
+.generator-content > * {
+	width: auto;
+}
+
+.input-container {
+	grid-template-columns: repeat(2, max-content);
+	gap: 30px;
+	padding: 10px;
+	align-items: center;
+}
+
+#length-text {
+	grid-column: 1/2 span;
+	grid-row: 1;
+}
+#length-val {
+	grid-column: 3;
+	grid-row: 1;
+	text-align: right;
+}
+
+.uppercase {
+	grid-row: 1;
+}
+
+.uppercase + label {
+	grid-row: 1;
+	grid-column: 2;
+}
+
+.lowercase {
+	grid-row: 2;
+}
+
+.lowercase + label {
+	grid-row: 2;
+	grid-column: 2;
+}
+
+.number {
+	grid-row: 3;
+}
+
+.number + label {
+	grid-row: 3;
+	grid-column: 2;
+}
+
+.symbol {
+	grid-row: 4;
+}
+
+.symbol + label {
+	grid-row: 4;
+	grid-column: 2;
+}
+
+.generator-container {
+	border: 1px solid;
+	border-radius: 10px;
+}
+
+.title-container p {
+	text-align: center;
+}
+
+input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	cursor: pointer;
+}
+
+.checkbox-container {
+	gap: 10px;
+}
+
+.icon {
+	display: inline-flex;
+	width: auto;
+	gap: 30px;
+}
+
+.strength {
+	gap: 20px;
+}
+
+.strength span {
+	width: max-content;
+}
+
+.range-container {
+	gap: 1em;
+}
+
+.copy-btn {
+	cursor: pointer;
+}
+
+.refresh-btn {
+	cursor: pointer;
+}
+
+input[type="text"] {
+	background-color: none;
+	border-top-style: hidden;
+	border-right-style: hidden;
+	border-left-style: hidden;
+	border-bottom-style: groove;
+}
+
+.col-light-placeholder::-webkit-input-placeholder {
+	color: #e4e5f1;
+}
+.col-dark-placeholder::-webkit-input-placeholder {
+	color: #00031a;
+}
+
+.strength-icon {
+	width: 1.5em;
+	height: 1.5em;
+	display: none;
+}
+
+.education-container {
+	grid-template-columns: repeat(3, 400px);
+	grid-template-rows: repeat(2, auto);
+	gap: 5em;
+	text-align: center;
+}
+
+.education-title {
+	grid-column: 1/3 span;
+}
+
+.fa-fingerprint,
+.fa-shield-halved,
+.long-textbox {
+	font-size: 5em;
+}
+
+.unique-container,
+.complex-container,
+.long-container {
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.random-text {
+	width: 500px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.download-container > .random-text {
+	display: block;
+}
+.download-container {
+	flex-direction: column;
+	gap: 60px;
+}
+
+.download-logo > i {
+	font-size: 5em;
+	width: min-content;
+}
+
+.download-logo {
+	gap: 2.5em;
+	justify-content: center;
+}
