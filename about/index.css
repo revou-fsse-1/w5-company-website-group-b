@@ -104,6 +104,10 @@ section {
 	gap: 0.5em;
 }
 
+.testi-comment {
+        color: #e4e5f1
+}
+
 .fa-quote-right {
 	font-size: 1em;
 	width: max-content;
