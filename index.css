@@ -1,11 +1,7 @@
-.intro-txt2 {
-	margin: 15vw;
-}
-
 .flex-container {
-	display: flex;
+  display: flex;
 }
 
 .grid-container {
-	display: grid;
+  display: grid;
 }
