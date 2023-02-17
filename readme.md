@@ -4,8 +4,14 @@
 
 ## Link
 
-[https://ggeasy.netlify.app](https://ggeasy.netlify.app)
-[https://ggeasy.yankyhermawan.xyz](https://ggeasy.yankyhermawan.xyz)
+### Netlify Link
+
+- [ggeasy.netlify.app](https://ggeasy.netlify.app)
+
+### Subdomain Link
+
+- [ggeasy.yankyhermawan.xyz](https://ggeasy.yankyhermawan.xyz)
+- [ggeasy.mahdiharish.site](https://ggeasy.mahdiharish.site)
 
 ## Inspiration
 
